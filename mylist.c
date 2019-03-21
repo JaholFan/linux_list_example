@@ -27,7 +27,7 @@ struct student* create_student(unsigned char score)
     st->score = score;
     return st;
 }
-static void fore_each_student(const struct linked_list *head)
+static void for_each_student(const struct linked_list *head)
 {
     struct linked_list *pos;
     struct student *st;
@@ -77,17 +77,17 @@ int main()
     list_add_tail(&st->linked_node, head);
 
     printf("After insert,score: \n");
-    fore_each_student(head);
+    for_each_student(head);
 
     //将第一个节点移到末尾
     printf("Move first node to tail,score:\n");
     list_move_tail(head->next, head);
-    fore_each_student(head);
+    for_each_student(head);
 
     //删除最后一个节点
     printf("Delete the last node,score:\n");
     list_del(head->prev);
-    fore_each_student(head);
+    for_each_student(head);
 
     destroy_student_list(head);
 
